@@ -22,7 +22,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MovieApp.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Movy">
+        <EntityType Name="Movie">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -32,7 +32,7 @@
           <Property Name="DateReleased" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityContainer Name="MoviesDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Movies" EntityType="Self.Movy" />
+          <EntitySet Name="Movies" EntityType="MovieApp.Models.Movie" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -41,7 +41,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MovieAppModelsStoreContainer" CdmEntityContainer="MoviesDBEntities">
           <EntitySetMapping Name="Movies">
-            <EntityTypeMapping TypeName="MovieApp.Models.Movy">
+            <EntityTypeMapping TypeName="MovieApp.Models.Movie">
               <MappingFragment StoreEntitySet="Movies">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

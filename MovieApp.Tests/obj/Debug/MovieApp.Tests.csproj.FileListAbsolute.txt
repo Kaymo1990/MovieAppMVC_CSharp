@@ -1,0 +1,2 @@
+C:\Users\Kay\source\repos\MovieApp\MovieApp.Tests\obj\Debug\MovieApp.Tests.csprojAssemblyReference.cache
+C:\Users\Kay\source\repos\MovieApp\MovieApp.Tests\obj\Debug\MovieApp.Tests.csproj.CoreCompileInputs.cache

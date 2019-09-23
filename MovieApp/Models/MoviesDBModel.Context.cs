@@ -25,6 +25,6 @@ namespace MovieApp.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Movy> Movies { get; set; }
+        public virtual DbSet<Movie> Movies { get; set; }
     }
 }
