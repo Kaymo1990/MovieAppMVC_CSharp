@@ -30,40 +30,41 @@ namespace MovieApp.Controllers
 
         // POST: Home/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Exclude = "Id")] Movie movieToCreate)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+            if (!ModelState.IsValid)
                 return View();
-            }
+
+            _db.Movies.Add(movieToCreate);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         // GET: Home/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var movieToEdit = (from movie in _db.Movies
+                               where movie.Id == id
+                               select movie).First();
+            return View(movieToEdit);
         }
 
         // POST: Home/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Movie movieToEdit)
         {
-            try
-            {
-                // TODO: Add update logic here
+            var originalMovie = (from movie in _db.Movies
+                                 where movie.Id == movieToEdit.Id
+                                 select movie).First();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            if (!ModelState.IsValid)
+                return View(originalMovie);
+
+            _db.Entry(originalMovie).CurrentValues.SetValues(movieToEdit);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
     }

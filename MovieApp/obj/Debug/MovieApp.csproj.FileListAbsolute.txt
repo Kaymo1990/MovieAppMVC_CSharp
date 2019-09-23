@@ -77,3 +77,4 @@ C:\Users\Kay\source\repos\MovieApp\MovieApp\obj\Debug\MovieApp.csproj.CoreCompil
 C:\Users\Kay\source\repos\MovieApp\MovieApp\obj\Debug\MovieApp.csproj.CopyComplete
 C:\Users\Kay\source\repos\MovieApp\MovieApp\obj\Debug\MovieApp.dll
 C:\Users\Kay\source\repos\MovieApp\MovieApp\obj\Debug\MovieApp.pdb
+C:\Users\Kay\source\repos\MovieApp\MovieApp\obj\Debug\MovieApp.csprojAssemblyReference.cache
